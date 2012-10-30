@@ -1,0 +1,52 @@
+10
+
+dir
+463
+svn://203.233.196.190/team1/with/WebContent
+svn://203.233.196.190/team1
+
+
+
+2012-10-11T11:52:00.500000Z
+462
+dufresne
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6a5abf78-f3a1-164e-8b27-3f9e83329515
+
+META-INF
+dir
+
+WEB-INF
+dir
+
+ckeditor
+dir
+
+css
+dir
+
+img
+dir
+
+include
+dir
+
+js
+dir
+
+upload
+dir
+

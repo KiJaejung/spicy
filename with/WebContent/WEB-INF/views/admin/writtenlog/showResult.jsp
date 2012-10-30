@@ -1,0 +1,18 @@
+<!DOCUTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<link href="/with/css/style.css" rel="stylesheet">
+
+<c:forEach items="${list}" var="bean">
+<input type = "hidden" id = "textcount" name ="textcount" value = "${bean.textcount}" />
+<input type = "hidden" id = "quotecount" name ="quotecount" value = "${bean.quotecount}" />
+<input type = "hidden" id = "linkcount" name ="linkcount" value = "${bean.linkcount}" />
+<input type = "hidden" id = "photocount" name ="photocount" value = "${bean.photocount}" />
+<input type = "hidden" id = "moviecount" name ="moviecount" value = "${bean.moviecount}" />
+<input type = "hidden" id = "musiccount" name ="musiccount" value = "${bean.musiccount}" />
+<input type = "hidden" id = "totalcount" name ="totalcount" value = "${bean.totalcount}" />
+<input type = "hidden" id = "replycount" name ="replycount" value = "${bean.replycount}" />
+<input type = "hidden" id = "writtenlogdate" name = "writtenlogdate" value = "${bean.writtenlogdate}" />
+
+</c:forEach>

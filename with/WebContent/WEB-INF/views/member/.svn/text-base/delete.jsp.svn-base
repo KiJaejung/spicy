@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WITH</title>
+    <meta http-equiv="REFRESH" content="3; URL=/with/">
+    <link href="/with/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/with/css/style.css" rel="stylesheet">
+    <style type="text/css">
+      html {
+        background: url(/with/img/pic_test.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="loginReady">
+        잘 가자!
+      </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

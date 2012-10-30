@@ -1,0 +1,55 @@
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	
+		<property name="connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		
+		<property name="connection.url">
+			jdbc:oracle:thin:@203.233.196.177:1521/xe
+		</property>
+		
+		<property name="connection.username">
+			dh
+		</property>
+		
+		<property name="connection.password">
+			dh
+		</property>
+		
+		<property name="connection.pool_size">5</property>
+		
+		<property name="dialect">
+			org.hibernate.dialect.OracleDialect
+		</property>
+		
+		<property name="show_sql">false</property>
+		<property name="format_sql">true</property>
+		
+		<!-- User 도메인 부분 -->
+		<mapping class="com.with.domain.Posts" />
+		<mapping class="com.with.domain.Reply" />
+		<mapping class="com.with.domain.Member" />
+		<mapping class="com.with.domain.Likes" />
+		<mapping class="com.with.domain.API" />
+		<mapping class="com.with.domain.Friend" />
+		<mapping class="com.with.domain.ReplyCount" />
+		<mapping class="com.with.domain.LikesCount" />
+		<mapping class="com.with.domain.FriendStandby" />
+		
+		<!-- Admin 도메인 부분 -->
+		<mapping class="com.admin.domain.MemberAdmin" />
+		<mapping class="com.admin.domain.MemberLog" />
+		<mapping class="com.admin.domain.PostsAdmin" />
+		<mapping class = "com.admin.domain.VisitListLog" />		
+		<mapping class = "com.admin.domain.DropListLog" />
+		<mapping class = "com.admin.domain.PostsLog" />
+		<mapping class = "com.admin.domain.WrittenLog" />
+		<!-- <mapping class="com.admin.domain.BannerLog" />-->
+			
+		
+	</session-factory>
+</hibernate-configuration>

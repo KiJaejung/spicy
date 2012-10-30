@@ -1,0 +1,57 @@
+package com.with.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.with.domain.Reply;
+import com.with.domain.ReplyCount;
+
+public class ReplyDao extends MasterDao<Reply, Long> {
+	public List<Reply> index(Long post_no) {
+
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+
+		StringBuffer buf = new StringBuffer();
+		buf.append("from Reply r ");
+		buf.append("where r.post_no=:postno order by r.id ");
+
+		int postno = Integer.parseInt(String.valueOf(post_no));
+		String hql = buf.toString();
+		
+		List<Reply> result = session.createQuery(hql).setParameter("postno", postno).list();
+		
+		tx.commit();
+		session.close();
+		
+		return result;
+	}
+	
+	public String delete(Long id) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		Reply domain = (Reply) session.get(Reply.class, id);
+		session.delete(domain);
+		tx.commit();
+		session.close();
+		return "true";
+	}
+
+	
+	public ReplyCount show(int post_no){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		StringBuffer buf = new StringBuffer();
+		buf.append("from ReplyCount r ");
+		buf.append("where r.post_no=:post_no ");
+		String hql = buf.toString();
+		ReplyCount  result = (ReplyCount) session.createQuery(hql)
+				.setInteger("post_no", post_no).uniqueResult();
+		tx.commit();
+		session.close();
+		return result;
+	}
+
+}
